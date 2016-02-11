@@ -3,22 +3,19 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhs_c_weapons","ace_frag"};
+		requiredAddons[] = {"rhs_c_weapons","rhs_c_heavyweapons","ace_frag","ace_missileguidance","ace_overpressure"};
 	};
 };
 
 class CfgAmmo {
 	class ACE_frag_large;
 	class ACE_frag_aa_igla: ACE_frag_large {
-		hit = 50;
-		indirectHit = 50;
+		hit = 25;
+		indirectHit = 25;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
-		caliber = 3;
+		caliber = 1.5;
 		timeToLive = 0.2;
-	};
-	class ACE_frag_spall_small: ACE_frag_aa_igla {
-		timeToLive = 0.1;
 	};
 	class M_Titan_AA;
 	class rhs_ammo_9k32: M_Titan_AA {
@@ -36,21 +33,46 @@ class CfgAmmo {
 		cmimmunity = 0.50;
 		cost = 750;
 		fusedistance = 100;
-		hit = 30;
+		hit = 15;
 		indirecthit = 15;
-		indirecthitrange = 2;
+		indirecthitrange = 4;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 6;
-		maxspeed = 1100;
+		maxspeed = 470;
 		simulationstep = 0.002;
-		thrust = 650;
-		thrusttime = 2;
+		sideairfriction = 0.03;
+		thrust = 609;
+		thrusttime = 1.5;
 		timetolive = 15;
 		tracklead = 0.8;
 		trackoversteer = 1;
 		weaponlocksystem = "16 + 2";
 		whistledist = 16;
+        class ace_missileguidance {
+            enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
+
+            minDeflection = 0;  // Minimum flap deflection for guidance
+            maxDeflection = 0.001;  // Maximum flap deflection for guidance
+            incDeflection = 0.00001;  // The increment in which deflection adjusts
+
+            canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
+
+            defaultSeekerType = "Thermal";  // Default seeker type
+            seekerTypes[] = {"Thermal"};  // Seeker types available
+
+            defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
+            seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
+
+            seekerAngle = 100;  // Angle in front of the missile which can be searched
+            seekerAccuracy = 1;  // Seeker accuracy multiplier
+
+            seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
+            seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+
+            defaultAttackProfile = "HI";  // Default attack profile
+            attackProfiles[] = {"HI"};  // Attack profiles available
+        };
 	};
 	class rhs_ammo_9k38: rhs_ammo_9k32 {
         ace_frag_enabled = 1;
@@ -69,31 +91,86 @@ class CfgAmmo {
 		fusedistance = 100;
 		hit = 30;
 		indirecthit = 15;
-		indirecthitrange = 2;
-		inittime = 0.25;
+		indirecthitrange = 4;
+		inittime = 0.5;
 		irlock = 1;
-		maneuvrability = 12;
-		maxspeed = 1800;
+		maneuvrability = 10;
+		maxspeed = 800;
 		simulationstep = 0.002;
-		thrust = 650;
+		sideairfriction = 0.03;
+		thrust = 609;
 		thrusttime = 2;
 		timetolive = 15;
 		tracklead = 1;
 		trackoversteer = 1;
 		weaponlocksystem = "16 + 2";
 		whistledist = 16;
+        class ace_missileguidance {
+            enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
+
+            minDeflection = 0;  // Minimum flap deflection for guidance
+            maxDeflection = 0.001;  // Maximum flap deflection for guidance
+            incDeflection = 0.00001;  // The increment in which deflection adjusts
+
+            canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
+
+            defaultSeekerType = "Thermal";  // Default seeker type
+            seekerTypes[] = {"Thermal"};  // Seeker types available
+
+            defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
+            seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
+
+            seekerAngle = 100;  // Angle in front of the missile which can be searched
+            seekerAccuracy = 1;  // Seeker accuracy multiplier
+
+            seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
+            seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+
+            defaultAttackProfile = "HI";  // Default attack profile
+            attackProfiles[] = {"HI"};  // Attack profiles available
+        };
 	};
 };
 
 class CfgWeapons {
 	class rhs_weap_strela;
 	class rhs_weap_igla: rhs_weap_strela {
-		reloadTime = 1;
-		magazineReloadTime = 15;
 		canLock = 2;
 		lockAcquire = 0;
-		weaponLockDelay = 1;
-		weaponLockSystem = 8;
+		weaponLockDelay = 2;
+		weaponLockSystem = 2;
+        ace_overpressure_angle = 45;  // Cone in which the damage is applied (in degrees from the back end of the launcher)
+        ace_overpressure_range = 2;  // Range in meters in which the damage is applied
+        ace_overpressure_damage = 1;  // Damage multiplier
+	};
+	class launch_Titan_base;
+	class rhs_weap_Igla_twice: launch_Titan_base {
+		reloadTime = 0.1;
+		autoReload = 0;
+		magazineReloadTime = 30;
+		canLock = 2;
+		lockAcquire = 0;
+		weaponLockDelay = 2;
+		weaponLockSystem = 2;
+	};
+};
+
+class CfgVehicles {
+	class LandVehicle;
+	class StaticWeapon: LandVehicle {
+		class Turrets;
+		class MainTurret;
+	};
+	class StaticAAWeapon: StaticWeapon{};
+	class rhs_Igla_AA_pod_Base: StaticAAWeapon {
+		class Turrets: Turrets {
+			class MainTurret: MainTurret {
+				magazines[] = {
+				"rhs_mag_2Rnd_Igla",
+				"rhs_mag_2Rnd_Igla"
+				};
+			};
+		};
 	};
 };
 
