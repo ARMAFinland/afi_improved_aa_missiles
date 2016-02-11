@@ -139,9 +139,9 @@ class CfgWeapons {
 		lockAcquire = 0;
 		weaponLockDelay = 2;
 		weaponLockSystem = 2;
-        ace_overpressure_angle = 45;  // Cone in which the damage is applied (in degrees from the back end of the launcher)
-        ace_overpressure_range = 2;  // Range in meters in which the damage is applied
-        ace_overpressure_damage = 1;  // Damage multiplier
+		ace_overpressure_angle = 30;  // Cone in which the damage is applied (in degrees from the back end of the launcher)
+		ace_overpressure_range = 2;  // Range in meters in which the damage is applied
+		ace_overpressure_damage = 0.5;  // Damage multiplier
 	};
 	class launch_Titan_base;
 	class rhs_weap_Igla_twice: launch_Titan_base {
