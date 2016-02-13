@@ -3,15 +3,15 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","ace_frag","ace_overpressure"};
+		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","ace_frag","ace_overpressure"};
 	};
 };
 
 class CfgAmmo {
 	class ACE_frag_large;
 	class ACE_frag_aa_stinger: ACE_frag_large {
-		hit = 25;
-		indirectHit = 25;
+		hit = 30;
+		indirectHit = 15;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
 		caliber = 1.5;
@@ -31,55 +31,52 @@ class CfgAmmo {
 		airlock = 2;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
-		hit = 15;
+		hit = 30;
 		indirecthit = 15;
 		indirecthitrange = 4;
-		inittime = 0.5;
+		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 10;
 		maxspeed = 750;
-		sideairfriction = 0.025;
+		sideairfriction = 0.03;
 		simulationstep = 0.002;
-		thrust = 1050;
+		thrust = 375;
 		thrusttime = 2;
 		timetolive = 15;
 		tracklead = 1;
 		trackoversteer = 1;
 		weaponlocksystem = "16 + 2";
-        class ace_missileguidance {
-            enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-
-            minDeflection = 0;  // Minimum flap deflection for guidance
-            maxDeflection = 0.001;  // Maximum flap deflection for guidance
-            incDeflection = 0.00001;  // The increment in which deflection adjusts
-
-            canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-
-            defaultSeekerType = "Thermal";  // Default seeker type
-            seekerTypes[] = {"Thermal"};  // Seeker types available
-
-            defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-            seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-
-            seekerAngle = 100;  // Angle in front of the missile which can be searched
-            seekerAccuracy = 1;  // Seeker accuracy multiplier
-
-            seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-            seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
-
-            defaultAttackProfile = "DIR";  // Default attack profile
-            attackProfiles[] = {"DIR"};  // Attack profiles available
-        };
+		CraterEffects = "AAMissileCrater";
+		explosionEffects = "AAMissileExplosion";
+		effectsMissile = "Missile6";
+		whistleDist = 16;
+		class ace_missileguidance {
+			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
+			minDeflection = 0;  // Minimum flap deflection for guidance
+			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
+			defaultSeekerType = "Thermal";  // Default seeker type
+			seekerTypes[] = {"Thermal"};  // Seeker types available
+			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
+			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
+			seekerAngle = 90;  // Angle in front of the missile which can be searched
+			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
+			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			defaultAttackProfile = "AIR";  // Default attack profile
+			attackProfiles[] = {"AIR"};  // Attack profiles available
+		};
 	};
 	class rhsammo_fim92_missile: M_Titan_AA {
-        ace_frag_enabled = 1;
-        ace_frag_metal = 10100;
-        ace_frag_charge = 250;
-        ace_frag_gurney_c = 2800;
-        ace_frag_gurney_k = 3/5;
-        ace_frag_classes[] = {"ACE_frag_aa_stinger"};
-        ace_frag_skip = 0;
-        ace_frag_force = 1;
+		ace_frag_enabled = 1;
+		ace_frag_metal = 10100;
+		ace_frag_charge = 250;
+		ace_frag_gurney_c = 2800;
+		ace_frag_gurney_k = 3/5;
+		ace_frag_classes[] = {"ACE_frag_aa_stinger"};
+		ace_frag_skip = 0;
+		ace_frag_force = 1;
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
 		hit = 30;
 		indirectHit = 30;
@@ -92,40 +89,33 @@ class CfgAmmo {
 		irLock = 1;
 		cost = 1000;
 		timeToLive = 15;
-		sideAirFriction = 0.25;
+		sideAirFriction = 0.3;
 		maxSpeed = 750;
-		initTime = 0.5;
+		initTime = 0.25;
 		thrustTime = 2;
-		thrust = 1050;
+		thrust = 375;
 		fuseDistance = 100;
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
-		effectsMissile = "missile3";
+		effectsMissile = "Missile6";
 		whistleDist = 16;
-        class ace_missileguidance {
-            enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-
-            minDeflection = 0;  // Minimum flap deflection for guidance
-            maxDeflection = 0.001;  // Maximum flap deflection for guidance
-            incDeflection = 0.00001;  // The increment in which deflection adjusts
-
-            canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-
-            defaultSeekerType = "Thermal";  // Default seeker type
-            seekerTypes[] = {"Thermal"};  // Seeker types available
-
-            defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-            seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-
-            seekerAngle = 100;  // Angle in front of the missile which can be searched
-            seekerAccuracy = 1;  // Seeker accuracy multiplier
-
-            seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-            seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
-
-            defaultAttackProfile = "DIR";  // Default attack profile
-            attackProfiles[] = {"DIR"};  // Attack profiles available
-        };
+		class ace_missileguidance {
+			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
+			minDeflection = 0;  // Minimum flap deflection for guidance
+			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
+			defaultSeekerType = "Thermal";  // Default seeker type
+			seekerTypes[] = {"Thermal"};  // Seeker types available
+			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
+			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
+			seekerAngle = 90;  // Angle in front of the missile which can be searched
+			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
+			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			defaultAttackProfile = "AIR";  // Default attack profile
+			attackProfiles[] = {"AIR"};  // Attack profiles available
+		};
 	};
 };
 
@@ -203,6 +193,61 @@ class CfgVehicles {
 				};
 			};
 		};
+	};
+};
+
+class CfgCloudlets {
+	class Default;
+	class Missile6: Default {
+		interval = "0.0012";
+		circleRadius = 0;
+		circleVelocity[] = {0,0,0};
+		angleVar = 1;
+		particleFSLoop = 0;
+		particleShape = "\A3\data_f\ParticleEffects\Universal\Universal";
+		particleFSNtieth = 16;
+		particleFSIndex = 12;
+		particleFSFrameCount = 8;
+		animationName = "";
+		particleType = "Billboard";
+		timerPeriod = 1;
+		lifeTime = 20;
+		moveVelocity[] = {0,0,0};
+		rotationVelocity = 1;
+		weight = 2.2;
+		volume = 1.75;
+		rubbing = 0.05;
+		size[] = {1,5};
+		color[] = {{ 0.5,0.5,0.5,0.8 },{ 1,1,1,0 }};
+		animationSpeed[] = {1};
+		randomDirectionPeriod = 0.001;
+		randomDirectionIntensity = 0.001;
+		onTimerScript = "";
+		beforeDestroyScript = "";
+		blockAIVisibility = 0;
+		lifeTimeVar = 10;
+		positionVar[] = {0.1,0.1,0.1};
+		MoveVelocityVar[] = {0.001,0.001,0.001;
+		rotationVelocityVar = 5;
+		sizeVar = 0.5;
+		colorVar[] = {0,0,0,0};
+		randomDirectionPeriodVar = 0;
+		randomDirectionIntensityVar = 0;
+	};
+};
+
+class Missile6 {
+	class Light1 {
+		simulation = "light";
+		type = "RocketLight";
+		position[] = {0,0,0};
+		intensity = 0.1;
+		interval = 1;
+		lifeTime = 1;
+	};
+	class Missile6 {
+		simulation = "particles";
+		type = "Missile6";
 	};
 };
 
