@@ -10,11 +10,11 @@ class CfgPatches {
 class CfgAmmo {
 	class ACE_frag_large;
 	class ACE_frag_aa_igla: ACE_frag_large {
-		hit = 25;
-		indirectHit = 25;
+		hit = 30;
+		indirectHit = 15;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
-		caliber = 1.5;
+		caliber = 1;
 		timeToLive = 0.2;
 	};
 	class M_Titan_AA;
@@ -55,7 +55,7 @@ class CfgAmmo {
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
 			minDeflection = 0;  // Minimum flap deflection for guidance
-			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
@@ -63,7 +63,7 @@ class CfgAmmo {
 			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
 			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
 			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
@@ -107,7 +107,7 @@ class CfgAmmo {
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
 			minDeflection = 0;  // Minimum flap deflection for guidance
-			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
@@ -115,7 +115,7 @@ class CfgAmmo {
 			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
 			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
 			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile

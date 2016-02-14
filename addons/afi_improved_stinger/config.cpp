@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","ace_frag","ace_overpressure"};
+		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","A3_Weapons_F","ace_frag","ace_overpressure"};
 	};
 };
 
@@ -14,7 +14,7 @@ class CfgAmmo {
 		indirectHit = 15;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
-		caliber = 1.5;
+		caliber = 1;
 		timeToLive = 0.2;
 	};
 	class M_Titan_AA;
@@ -38,7 +38,7 @@ class CfgAmmo {
 		irlock = 1;
 		maneuvrability = 10;
 		maxspeed = 750;
-		sideairfriction = 0.03;
+		sideairfriction = 0.025;
 		simulationstep = 0.002;
 		thrust = 375;
 		thrusttime = 2;
@@ -53,7 +53,7 @@ class CfgAmmo {
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
 			minDeflection = 0;  // Minimum flap deflection for guidance
-			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
@@ -61,7 +61,7 @@ class CfgAmmo {
 			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
 			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
 			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
@@ -89,7 +89,7 @@ class CfgAmmo {
 		irLock = 1;
 		cost = 1000;
 		timeToLive = 15;
-		sideAirFriction = 0.3;
+		sideAirFriction = 0.25;
 		maxSpeed = 750;
 		initTime = 0.25;
 		thrustTime = 2;
@@ -102,7 +102,7 @@ class CfgAmmo {
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
 			minDeflection = 0;  // Minimum flap deflection for guidance
-			maxDeflection = 0.00025;  // Maximum flap deflection for guidance
+			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
@@ -110,7 +110,7 @@ class CfgAmmo {
 			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
 			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 0.5;  // Seeker accuracy multiplier
+			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
 			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
@@ -211,7 +211,7 @@ class CfgCloudlets {
 		animationName = "";
 		particleType = "Billboard";
 		timerPeriod = 1;
-		lifeTime = 20;
+		lifeTime = 15;
 		moveVelocity[] = {0,0,0};
 		rotationVelocity = 1;
 		weight = 2.2;
@@ -220,14 +220,14 @@ class CfgCloudlets {
 		size[] = {1,5};
 		color[] = {{ 0.5,0.5,0.5,0.8 },{ 1,1,1,0 }};
 		animationSpeed[] = {1};
-		randomDirectionPeriod = 0.001;
-		randomDirectionIntensity = 0.001;
+		randomDirectionPeriod = 0.005;
+		randomDirectionIntensity = 0.005;
 		onTimerScript = "";
 		beforeDestroyScript = "";
 		blockAIVisibility = 0;
-		lifeTimeVar = 10;
+		lifeTimeVar = 5;
 		positionVar[] = {0.1,0.1,0.1};
-		MoveVelocityVar[] = {0.001,0.001,0.001;
+		MoveVelocityVar[] = {0.005,0.005,0.005;
 		rotationVelocityVar = 5;
 		sizeVar = 0.5;
 		colorVar[] = {0,0,0,0};
