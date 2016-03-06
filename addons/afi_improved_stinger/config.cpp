@@ -10,7 +10,7 @@ class CfgPatches {
 class CfgAmmo {
 	class ACE_frag_large;
 	class ACE_frag_aa_stinger: ACE_frag_large {
-		hit = 30;
+		hit = 15;
 		indirectHit = 15;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
@@ -31,17 +31,17 @@ class CfgAmmo {
 		airlock = 2;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
-		hit = 30;
-		indirecthit = 15;
-		indirecthitrange = 4;
+		hit = 1;
+		indirecthit = 5;
+		indirecthitrange = 2;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 10;
 		maxspeed = 750;
 		sideairfriction = 0.025;
 		simulationstep = 0.002;
-		thrust = 375;
-		thrusttime = 2;
+		thrust = 250;
+		thrusttime = 3;
 		timetolive = 15;
 		tracklead = 1;
 		trackoversteer = 1;
@@ -52,7 +52,7 @@ class CfgAmmo {
 		whistleDist = 16;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0;  // Minimum flap deflection for guidance
+			minDeflection = 0.00001;  // Minimum flap deflection for guidance
 			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
@@ -92,8 +92,8 @@ class CfgAmmo {
 		sideAirFriction = 0.25;
 		maxSpeed = 750;
 		initTime = 0.25;
-		thrustTime = 2;
-		thrust = 375;
+		thrustTime = 3;
+		thrust = 250;
 		fuseDistance = 100;
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
@@ -118,6 +118,31 @@ class CfgAmmo {
 		};
 	};
 };
+
+class CfgMagazines {
+	class Titan_AA;
+	class rhs_fim92_mag: Titan_AA {
+		displayName = "FIM-92F";
+		descriptionshort = "Type: Surface-to-air<br />Caliber: 70 mm<br />Used in: FIM-92";
+		ammo = "rhsammo_fim92_missile";
+		type = "6 * 256";
+		picture = "\rhsusf\addons\rhsusf_weapons\icons\m_stinger_ca.paa";
+		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_proxy";
+		initSpeed = 10;
+		maxLeadSpeed = 320;
+	};
+};
+	class VehicleMagazine;
+	class Rhs_mag_4Rnd_stinger: VehicleMagazine {
+		scope = 2;
+		ammo = "rhs_ammo_Stinger_AA";
+		displayname = "FIM-92F Stinger";
+		displaynameshort = "FIM-92F";
+		initspeed = 10;
+		maxLeadSpeed = 850;
+		nameSound = "missiles";
+		count = 4;
+	};
 
 class CfgWeapons {
 	class Rhs_weap_TOW_Launcher;
@@ -199,7 +224,7 @@ class CfgVehicles {
 class CfgCloudlets {
 	class Default;
 	class Missile6: Default {
-		interval = "0.0012";
+		interval = "0.0005";
 		circleRadius = 0;
 		circleVelocity[] = {0,0,0};
 		angleVar = 1;
@@ -211,14 +236,14 @@ class CfgCloudlets {
 		animationName = "";
 		particleType = "Billboard";
 		timerPeriod = 1;
-		lifeTime = 15;
+		lifeTime = 20;
 		moveVelocity[] = {0,0,0};
 		rotationVelocity = 1;
-		weight = 2.2;
+		weight = 2.225;
 		volume = 1.75;
 		rubbing = 0.05;
-		size[] = {1,5};
-		color[] = {{ 0.5,0.5,0.5,0.8 },{ 1,1,1,0 }};
+		size[] = {1,3};
+		color[] = {{ 0.5,0.5,0.5,0.75},{ 0.75,0.75,0.75,0.5 },{ 1,1,1,0 }};
 		animationSpeed[] = {1};
 		randomDirectionPeriod = 0.005;
 		randomDirectionIntensity = 0.005;
@@ -226,13 +251,20 @@ class CfgCloudlets {
 		beforeDestroyScript = "";
 		blockAIVisibility = 0;
 		lifeTimeVar = 5;
-		positionVar[] = {0.1,0.1,0.1};
+		positionVar[] = {0.25,0.25,0.25};
 		MoveVelocityVar[] = {0.005,0.005,0.005;
+		MoveVelocityVarConst[] = {0.05,0.05,0.05};
 		rotationVelocityVar = 5;
-		sizeVar = 0.5;
+		sizeVar = 1;
 		colorVar[] = {0,0,0,0};
 		randomDirectionPeriodVar = 0;
 		randomDirectionIntensityVar = 0;
+		destroyOnWaterSurface = 1;
+		destroyOnWaterSurfaceOffset = -0.1;
+		onSurface = 1;
+		surfaceOffset = 0.1;
+		bounceOnSurface = 0.1;
+		bounceOnSurfaceVar = 0.1;
 	};
 };
 

@@ -10,7 +10,7 @@ class CfgPatches {
 class CfgAmmo {
 	class ACE_frag_large;
 	class ACE_frag_aa_igla: ACE_frag_large {
-		hit = 30;
+		hit = 15;
 		indirectHit = 15;
 		indirectHitRange = 1;
 		airFriction = "-0.01*0.5";
@@ -33,17 +33,17 @@ class CfgAmmo {
 		cmimmunity = 0.50;
 		cost = 750;
 		fusedistance = 100;
-		hit = 15;
-		indirecthit = 15;
-		indirecthitrange = 4;
+		hit = 1;
+		indirecthit = 5;
+		indirecthitrange = 2;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 6;
 		maxspeed = 470;
 		simulationstep = 0.002;
 		sideairfriction = 0.025;
-		thrust = 325;
-		thrusttime = 2;
+		thrust = 157;
+		thrusttime = 3;
 		timetolive = 15;
 		tracklead = 0.8;
 		trackoversteer = 1;
@@ -54,7 +54,7 @@ class CfgAmmo {
 		effectsMissile = "Missile6";
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0;  // Minimum flap deflection for guidance
+			minDeflection = 0.00001;  // Minimum flap deflection for guidance
 			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
@@ -85,17 +85,17 @@ class CfgAmmo {
 		cmimmunity = 0.75;
 		cost = 750;
 		fusedistance = 100;
-		hit = 30;
-		indirecthit = 15;
-		indirecthitrange = 4;
+		hit = 1;
+		indirecthit = 5;
+		indirecthitrange = 2;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 10;
 		maxspeed = 800;
 		simulationstep = 0.002;
 		sideairfriction = 0.025;
-		thrust = 400;
-		thrusttime = 2;
+		thrust = 267;
+		thrusttime = 3;
 		timetolive = 15;
 		tracklead = 1;
 		trackoversteer = 1;
@@ -121,6 +121,32 @@ class CfgAmmo {
 			defaultAttackProfile = "AIR";  // Default attack profile
 			attackProfiles[] = {"AIR"};  // Attack profiles available
 		};
+	};
+};
+
+class CfgMagazines {
+	class Titan_AA;
+	class rhs_mag_2Rnd_Igla: Titan_AA {
+		displayname = "9K32";
+		descriptionshort = "Range: 800-4200 m <br/>Type: ground-air <br/>Used in: 9K32";
+		ammo = "rhs_ammo_9k38";
+		type = "6 * 256";
+		count = 2;
+		initspeed = 10;
+		maxleadspeed = 320;
+		nameSound = "missiles";
+	};
+	class rhs_mag_9k32_rocket: Titan_AA {
+		ammo = "rhs_ammo_9k32";
+		descriptionshort = "Range: 800-4200 m <br/>Type: ground-air <br/>Used in: 9K32";
+		displayname = "9K32";
+		author = "$STR_RHS_AUTHOR_FULL";
+		initspeed = 10;
+		maxleadspeed = 320;
+		modelspecial = "";
+		picture = "\rhsafrf\addons\rhs_weapons\icons\m_igla_ca.paa";
+		scope = 2;
+		nameSound = "missiles";
 	};
 };
 
