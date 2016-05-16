@@ -3,58 +3,42 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","A3_Weapons_F","ace_frag","ace_overpressure"};
+		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","A3_Weapons_F","ace_missileguidance","ace_overpressure"};
 	};
 };
 
 class CfgAmmo {
-	class ACE_frag_large;
-	class ACE_frag_aa_stinger: ACE_frag_large {
-		hit = 15;
-		indirectHit = 15;
-		indirectHitRange = 1;
-		airFriction = "-0.01*0.5";
-		caliber = 1;
-		timeToLive = 0.2;
-	};
 	class M_Titan_AA;
 	class rhs_ammo_Stinger_AA: M_Titan_AA {
-        ace_frag_enabled = 1;
-        ace_frag_metal = 10100;
-        ace_frag_charge = 250;
-        ace_frag_gurney_c = 2800;
-        ace_frag_gurney_k = 3/5;
-        ace_frag_classes[] = {"ACE_frag_aa_stinger"};
-        ace_frag_skip = 0;
-        ace_frag_force = 1;
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
 		airlock = 2;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
 		hit = 1;
-		indirecthit = 5;
-		indirecthitrange = 2;
+		indirecthit = 15;
+		indirecthitrange = 3;
 		inittime = 0.25;
 		irlock = 1;
-		maneuvrability = 10;
+		maneuvrability = 6;
 		maxspeed = 750;
 		sideairfriction = 0.025;
 		simulationstep = 0.002;
-		thrust = 250;
-		thrusttime = 3;
+		thrust = 375;
+		thrusttime = 4;
 		timetolive = 15;
 		tracklead = 1;
-		trackoversteer = 1;
-		weaponlocksystem = "16 + 2";
+		trackoversteer = 0.8;
+		weaponlocksystem = "2";
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
 		whistleDist = 16;
+		manualControl = 0;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.00001;  // Minimum flap deflection for guidance
-			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
-			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			minDeflection = 0.0005;  // Minimum flap deflection for guidance
+			maxDeflection = 0.001;  // Maximum flap deflection for guidance
+			incDeflection = 0.0005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
 			seekerTypes[] = {"Thermal"};  // Seeker types available
@@ -63,45 +47,39 @@ class CfgAmmo {
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
 			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			seekerMaxRange = 8000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
 			attackProfiles[] = {"AIR"};  // Attack profiles available
 		};
 	};
 	class rhsammo_fim92_missile: M_Titan_AA {
-		ace_frag_enabled = 1;
-		ace_frag_metal = 10100;
-		ace_frag_charge = 250;
-		ace_frag_gurney_c = 2800;
-		ace_frag_gurney_k = 3/5;
-		ace_frag_classes[] = {"ACE_frag_aa_stinger"};
-		ace_frag_skip = 0;
-		ace_frag_force = 1;
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
-		hit = 30;
-		indirectHit = 30;
-		indirectHitRange = 2;
-		maneuvrability = 10;
-		simulationStep = 0.002;
-		trackOversteer = 1;
-		trackLead = 1;
-		airLock = 2;
-		irLock = 1;
-		cost = 1000;
-		timeToLive = 15;
-		sideAirFriction = 0.25;
-		maxSpeed = 750;
-		initTime = 0.25;
-		thrustTime = 3;
-		thrust = 250;
-		fuseDistance = 100;
+		airlock = 2;
+		cmimmunity = 0.75;
+		fuseDistance = 200;
+		hit = 1;
+		indirecthit = 15;
+		indirecthitrange = 3;
+		inittime = 0.25;
+		irlock = 1;
+		maneuvrability = 6;
+		maxspeed = 750;
+		sideairfriction = 0.025;
+		simulationstep = 0.002;
+		thrust = 375;
+		thrusttime = 4;
+		timetolive = 15;
+		tracklead = 1;
+		trackoversteer = 0.8;
+		weaponlocksystem = "2";
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
 		whistleDist = 16;
+		manualControl = 0;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0;  // Minimum flap deflection for guidance
+			minDeflection = 0.00005;  // Minimum flap deflection for guidance
 			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
 			incDeflection = 0.00005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
@@ -112,7 +90,7 @@ class CfgAmmo {
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
 			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			seekerMaxRange = 8000;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
 			attackProfiles[] = {"AIR"};  // Attack profiles available
 		};
@@ -236,7 +214,7 @@ class CfgCloudlets {
 		animationName = "";
 		particleType = "Billboard";
 		timerPeriod = 1;
-		lifeTime = 20;
+		lifeTime = 15;
 		moveVelocity[] = {0,0,0};
 		rotationVelocity = 1;
 		weight = 2.225;

@@ -3,30 +3,13 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhs_c_weapons","rhs_c_heavyweapons","A3_Data_F_ParticleEffects","ace_frag","ace_missileguidance","ace_overpressure"};
+		requiredAddons[] = {"rhs_c_weapons","rhs_c_heavyweapons","A3_Data_F_ParticleEffects","ace_missileguidance","ace_overpressure"};
 	};
 };
 
 class CfgAmmo {
-	class ACE_frag_large;
-	class ACE_frag_aa_igla: ACE_frag_large {
-		hit = 15;
-		indirectHit = 15;
-		indirectHitRange = 1;
-		airFriction = "-0.01*0.5";
-		caliber = 1;
-		timeToLive = 0.2;
-	};
 	class M_Titan_AA;
 	class rhs_ammo_9k32: M_Titan_AA {
-        ace_frag_enabled = 1;
-        ace_frag_metal = 10800;
-        ace_frag_charge = 390;
-        ace_frag_gurney_c = 2800;
-        ace_frag_gurney_k = 1/2;
-        ace_frag_classes[] = {"ACE_frag_aa_igla"};
-        ace_frag_skip = 0;
-        ace_frag_force = 1;
 		model = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_fly";
 		proxyShape = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_missile";
 		airlock = 2;
@@ -34,29 +17,30 @@ class CfgAmmo {
 		cost = 750;
 		fusedistance = 100;
 		hit = 1;
-		indirecthit = 5;
-		indirecthitrange = 2;
+		indirecthit = 15;
+		indirecthitrange = 3;
 		inittime = 0.25;
 		irlock = 1;
-		maneuvrability = 6;
-		maxspeed = 470;
+		maneuvrability = 4;
+		maxspeed = 500;
 		simulationstep = 0.002;
 		sideairfriction = 0.025;
-		thrust = 157;
-		thrusttime = 3;
+		thrust = 250;
+		thrusttime = 2;
 		timetolive = 15;
 		tracklead = 0.8;
-		trackoversteer = 1;
-		weaponlocksystem = "16 + 2";
+		trackoversteer = 0.8;
+		weaponlocksystem = "2";
 		whistledist = 16;
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
+		manualControl = 0;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.00001;  // Minimum flap deflection for guidance
-			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
-			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			minDeflection = 0.0005;  // Minimum flap deflection for guidance
+			maxDeflection = 0.001;  // Maximum flap deflection for guidance
+			incDeflection = 0.0005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
 			seekerTypes[] = {"Thermal"};  // Seeker types available
@@ -65,20 +49,12 @@ class CfgAmmo {
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
 			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			seekerMaxRange = 4200;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
 			attackProfiles[] = {"AIR"};  // Attack profiles available
 		};
 	};
 	class rhs_ammo_9k38: rhs_ammo_9k32 {
-        ace_frag_enabled = 1;
-        ace_frag_metal = 10800;
-        ace_frag_charge = 390;
-        ace_frag_gurney_c = 2800;
-        ace_frag_gurney_k = 1/2;
-        ace_frag_classes[] = {"ACE_frag_aa_igla"};
-        ace_frag_skip = 0;
-        ace_frag_force = 1;
 		model = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_fly";
 		proxyShape = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_missile";
 		airlock = 2;
@@ -86,29 +62,30 @@ class CfgAmmo {
 		cost = 750;
 		fusedistance = 100;
 		hit = 1;
-		indirecthit = 5;
-		indirecthitrange = 2;
+		indirecthit = 15;
+		indirecthitrange = 3;
 		inittime = 0.25;
 		irlock = 1;
-		maneuvrability = 10;
+		maneuvrability = 6;
 		maxspeed = 800;
 		simulationstep = 0.002;
 		sideairfriction = 0.025;
-		thrust = 267;
-		thrusttime = 3;
+		thrust = 400;
+		thrusttime = 2;
 		timetolive = 15;
 		tracklead = 1;
-		trackoversteer = 1;
+		trackoversteer = 0.8;
 		weaponlocksystem = "16 + 2";
 		whistledist = 16;
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
+		manualControl = 0;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0;  // Minimum flap deflection for guidance
-			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
-			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			minDeflection = 0.0005;  // Minimum flap deflection for guidance
+			maxDeflection = 0.001;  // Maximum flap deflection for guidance
+			incDeflection = 0.0005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
 			seekerTypes[] = {"Thermal"};  // Seeker types available
@@ -117,7 +94,7 @@ class CfgAmmo {
 			seekerAngle = 90;  // Angle in front of the missile which can be searched
 			seekerAccuracy = 1;  // Seeker accuracy multiplier
 			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4000;  // Maximum from the missile which the seeker can visually search
+			seekerMaxRange = 4200;  // Maximum from the missile which the seeker can visually search
 			defaultAttackProfile = "AIR";  // Default attack profile
 			attackProfiles[] = {"AIR"};  // Attack profiles available
 		};
