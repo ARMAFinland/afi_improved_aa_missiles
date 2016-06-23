@@ -13,6 +13,7 @@ class CfgAmmo {
 		model = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_fly";
 		proxyShape = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_missile";
 		airlock = 2;
+		lockType = 0;
 		cmimmunity = 0.50;
 		cost = 750;
 		fusedistance = 100;
@@ -28,8 +29,8 @@ class CfgAmmo {
 		thrust = 250;
 		thrusttime = 2;
 		timetolive = 15;
-		tracklead = 0.8;
-		trackoversteer = 0.8;
+		tracklead = 1;
+		trackoversteer = 1;
 		weaponlocksystem = "2";
 		whistledist = 16;
 		CraterEffects = "AAMissileCrater";
@@ -58,6 +59,7 @@ class CfgAmmo {
 		model = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_fly";
 		proxyShape = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_missile";
 		airlock = 2;
+		lockType = 0;
 		cmimmunity = 0.75;
 		cost = 750;
 		fusedistance = 100;
@@ -74,7 +76,7 @@ class CfgAmmo {
 		thrusttime = 2;
 		timetolive = 15;
 		tracklead = 1;
-		trackoversteer = 0.8;
+		trackoversteer = 1;
 		weaponlocksystem = "16 + 2";
 		whistledist = 16;
 		CraterEffects = "AAMissileCrater";
@@ -131,9 +133,8 @@ class CfgWeapons {
 	class rhs_weap_strela;
 	class rhs_weap_igla: rhs_weap_strela {
 		canLock = 2;
-		lockAcquire = 0;
-		weaponLockDelay = 2;
-		weaponLockSystem = 2;
+		weaponLockDelay = 1;
+		weaponLockSystem = 0 + 2;
 		ace_overpressure_angle = 30;  // Cone in which the damage is applied (in degrees from the back end of the launcher)
 		ace_overpressure_range = 2;  // Range in meters in which the damage is applied
 		ace_overpressure_damage = 0.5;  // Damage multiplier
@@ -144,9 +145,8 @@ class CfgWeapons {
 		autoReload = 0;
 		magazineReloadTime = 30;
 		canLock = 2;
-		lockAcquire = 0;
-		weaponLockDelay = 2;
-		weaponLockSystem = 2;
+		weaponLockDelay = 1;
+		weaponLockSystem = 0 + 2;
 	};
 };
 

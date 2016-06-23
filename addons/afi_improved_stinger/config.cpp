@@ -12,6 +12,7 @@ class CfgAmmo {
 	class rhs_ammo_Stinger_AA: M_Titan_AA {
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
 		airlock = 2;
+		lockType = 0;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
 		hit = 1;
@@ -27,7 +28,7 @@ class CfgAmmo {
 		thrusttime = 4;
 		timetolive = 15;
 		tracklead = 1;
-		trackoversteer = 0.8;
+		trackoversteer = 1;
 		weaponlocksystem = "2";
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
@@ -55,6 +56,7 @@ class CfgAmmo {
 	class rhsammo_fim92_missile: M_Titan_AA {
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
 		airlock = 2;
+		lockType = 0;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
 		hit = 1;
@@ -70,7 +72,7 @@ class CfgAmmo {
 		thrusttime = 4;
 		timetolive = 15;
 		tracklead = 1;
-		trackoversteer = 0.8;
+		trackoversteer = 1;
 		weaponlocksystem = "2";
 		CraterEffects = "AAMissileCrater";
 		explosionEffects = "AAMissileExplosion";
@@ -79,9 +81,9 @@ class CfgAmmo {
 		manualControl = 0;
 		class ace_missileguidance {
 			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.00005;  // Minimum flap deflection for guidance
-			maxDeflection = 0.0005;  // Maximum flap deflection for guidance
-			incDeflection = 0.00005;  // The increment in which deflection adjusts
+			minDeflection = 0.0005;  // Minimum flap deflection for guidance
+			maxDeflection = 0.001;  // Maximum flap deflection for guidance
+			incDeflection = 0.0005;  // The increment in which deflection adjusts
 			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
 			defaultSeekerType = "Thermal";  // Default seeker type
 			seekerTypes[] = {"Thermal"};  // Seeker types available
@@ -129,9 +131,8 @@ class CfgWeapons {
 		magazineReloadTime = 30;
 		autoReload = 0;
 		canLock = 2;
-		lockAcquire = 0;
-		weaponLockDelay = 2;
-		weaponLockSystem = 2;
+		weaponLockDelay = 1;
+		weaponLockSystem = 0 + 2;
 	};
 	class Rhs_weap_stinger_Launcher_static: Rhs_weap_stinger_Launcher {
 		autoReload = 0;
@@ -139,9 +140,8 @@ class CfgWeapons {
 	class launch_O_Titan_F;
 	class rhs_weap_fim92: launch_O_Titan_F {
 		canLock = 2;
-		lockAcquire = 0;
-		weaponLockDelay = 2;
-		weaponLockSystem = 2;
+		weaponLockDelay = 1;
+		weaponLockSystem = 0 + 2;
 		ace_overpressure_angle = 30;  // Cone in which the damage is applied (in degrees from the back end of the launcher)
 		ace_overpressure_range = 2;  // Range in meters in which the damage is applied
 		ace_overpressure_damage = 0.5;  // Damage multiplier
@@ -202,7 +202,7 @@ class CfgVehicles {
 class CfgCloudlets {
 	class Default;
 	class Missile6: Default {
-		interval = "0.0005";
+		interval = "0.00025";
 		circleRadius = 0;
 		circleVelocity[] = {0,0,0};
 		angleVar = 1;
