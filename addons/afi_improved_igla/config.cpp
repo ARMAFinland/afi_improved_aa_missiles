@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhs_c_weapons","rhs_c_heavyweapons","A3_Data_F_ParticleEffects","ace_missileguidance","ace_overpressure"};
+		requiredAddons[] = {"rhs_c_weapons","rhs_c_heavyweapons","A3_Data_F_ParticleEffects","ace_overpressure"};
 	};
 };
 
@@ -17,9 +17,9 @@ class CfgAmmo {
 		cmimmunity = 0.50;
 		cost = 750;
 		fusedistance = 100;
-		hit = 1;
-		indirecthit = 15;
-		indirecthitrange = 3;
+		// hit = 1;
+		// indirecthit = 20;
+		// indirecthitrange = 5;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 4;
@@ -37,23 +37,6 @@ class CfgAmmo {
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
 		manualControl = 0;
-		class ace_missileguidance {
-			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.0005;  // Minimum flap deflection for guidance
-			maxDeflection = 0.001;  // Maximum flap deflection for guidance
-			incDeflection = 0.0005;  // The increment in which deflection adjusts
-			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-			defaultSeekerType = "Thermal";  // Default seeker type
-			seekerTypes[] = {"Thermal"};  // Seeker types available
-			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 1;  // Seeker accuracy multiplier
-			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4200;  // Maximum from the missile which the seeker can visually search
-			defaultAttackProfile = "AIR";  // Default attack profile
-			attackProfiles[] = {"AIR"};  // Attack profiles available
-		};
 	};
 	class rhs_ammo_9k38: rhs_ammo_9k32 {
 		model = "\rhsafrf\addons\rhs_heavyweapons\igla\igla_fly";
@@ -63,9 +46,9 @@ class CfgAmmo {
 		cmimmunity = 0.75;
 		cost = 750;
 		fusedistance = 100;
-		hit = 1;
-		indirecthit = 15;
-		indirecthitrange = 3;
+		// hit = 1;
+		// indirecthit = 20;
+		// indirecthitrange = 5;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 6;
@@ -83,23 +66,6 @@ class CfgAmmo {
 		explosionEffects = "AAMissileExplosion";
 		effectsMissile = "Missile6";
 		manualControl = 0;
-		class ace_missileguidance {
-			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.0005;  // Minimum flap deflection for guidance
-			maxDeflection = 0.001;  // Maximum flap deflection for guidance
-			incDeflection = 0.0005;  // The increment in which deflection adjusts
-			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-			defaultSeekerType = "Thermal";  // Default seeker type
-			seekerTypes[] = {"Thermal"};  // Seeker types available
-			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 1;  // Seeker accuracy multiplier
-			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 4200;  // Maximum from the missile which the seeker can visually search
-			defaultAttackProfile = "AIR";  // Default attack profile
-			attackProfiles[] = {"AIR"};  // Attack profiles available
-		};
 	};
 };
 

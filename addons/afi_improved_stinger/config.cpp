@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","A3_Weapons_F","ace_missileguidance","ace_overpressure"};
+		requiredAddons[] = {"rhsusf_c_airweapons","RHS_US_A2Port_Armor","rhsusf_c_weapons","rhsusf_c_statics","A3_Data_F_ParticleEffects","A3_Weapons_F","ace_overpressure"};
 	};
 };
 
@@ -15,9 +15,9 @@ class CfgAmmo {
 		lockType = 0;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
-		hit = 1;
-		indirecthit = 15;
-		indirecthitrange = 3;
+		// hit = 1;
+		// indirecthit = 20;
+		// indirecthitrange = 5;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 6;
@@ -35,23 +35,6 @@ class CfgAmmo {
 		effectsMissile = "Missile6";
 		whistleDist = 16;
 		manualControl = 0;
-		class ace_missileguidance {
-			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.0005;  // Minimum flap deflection for guidance
-			maxDeflection = 0.001;  // Maximum flap deflection for guidance
-			incDeflection = 0.0005;  // The increment in which deflection adjusts
-			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-			defaultSeekerType = "Thermal";  // Default seeker type
-			seekerTypes[] = {"Thermal"};  // Seeker types available
-			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 1;  // Seeker accuracy multiplier
-			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 8000;  // Maximum from the missile which the seeker can visually search
-			defaultAttackProfile = "AIR";  // Default attack profile
-			attackProfiles[] = {"AIR"};  // Attack profiles available
-		};
 	};
 	class rhsammo_fim92_missile: M_Titan_AA {
 		model = "\rhsusf\addons\rhsusf_weapons\FIM92\Stinger_Rocket";
@@ -59,9 +42,9 @@ class CfgAmmo {
 		lockType = 0;
 		cmimmunity = 0.75;
 		fuseDistance = 200;
-		hit = 1;
-		indirecthit = 15;
-		indirecthitrange = 3;
+		// hit = 1;
+		// indirecthit = 20;
+		// indirecthitrange = 5;
 		inittime = 0.25;
 		irlock = 1;
 		maneuvrability = 6;
@@ -79,23 +62,6 @@ class CfgAmmo {
 		effectsMissile = "Missile6";
 		whistleDist = 16;
 		manualControl = 0;
-		class ace_missileguidance {
-			enabled = 1; // Enable missile guidance (0-disabled, 1-enabled)
-			minDeflection = 0.0005;  // Minimum flap deflection for guidance
-			maxDeflection = 0.001;  // Maximum flap deflection for guidance
-			incDeflection = 0.0005;  // The increment in which deflection adjusts
-			canVanillaLock = 0;  // Enable vanilla lock, only applicable to non-cadet modes, 'recruit' always uses vanilla locking (0-disabled, 1-enabled)
-			defaultSeekerType = "Thermal";  // Default seeker type
-			seekerTypes[] = {"Thermal"};  // Seeker types available
-			defaultSeekerLockMode = "LOBL";  // Default seeker lock mode
-			seekerLockModes[] = {"LOAL", "LOBL"};  // Seeker lock modes available
-			seekerAngle = 90;  // Angle in front of the missile which can be searched
-			seekerAccuracy = 1;  // Seeker accuracy multiplier
-			seekerMinRange = 1;  // Minimum range from the missile which the seeker can visually search
-			seekerMaxRange = 8000;  // Maximum from the missile which the seeker can visually search
-			defaultAttackProfile = "AIR";  // Default attack profile
-			attackProfiles[] = {"AIR"};  // Attack profiles available
-		};
 	};
 };
 
