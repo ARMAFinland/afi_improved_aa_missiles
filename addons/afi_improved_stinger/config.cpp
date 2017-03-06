@@ -196,7 +196,7 @@ class CfgCloudlets {
 		blockAIVisibility = 0;
 		lifeTimeVar = 5;
 		positionVar[] = {0.25,0.25,0.25};
-		MoveVelocityVar[] = {0.005,0.005,0.005;
+		MoveVelocityVar[] = {0.005,0.005,0.005};
 		MoveVelocityVarConst[] = {0.05,0.05,0.05};
 		rotationVelocityVar = 5;
 		sizeVar = 1;
