@@ -1,0 +1,6 @@
+///////<HEADER>///////
+prefix=x\afi\addons\improved_rhs_aa_missiles
+Mikero=DePbo.dll.6.09
+Pbo Type is: Arma Addon
+Sha: 'B34B43E0EB69B7681781089A40ADDF521F16E424'
+//////</HEADER>//////
